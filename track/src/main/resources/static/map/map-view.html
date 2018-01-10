@@ -1,0 +1,31 @@
+<div class="container-fluid" ng-controller="mapController">
+    <div class="row content">
+        <!--input section-->
+        <div class="col-sm-3 sidenav">
+            <ul class="nav nav-pills nav-stacked">
+                <li><label>Terminal Id</label>
+                    <input type="text" ng-model="position.id" ng-change="dataModelChange()"></li>
+                <li><label>*date pattern "YYYY-MM-DD"</label></li>
+                <li><label>Start Date</label>
+                    <input type="text" ng-model="position.start" ng-change="dataModelChange()"></li>
+                <li><label>End Date</label>
+                    <input type="text" ng-model="position.end" ng-change="dataModelChange()"></li>
+                <li>
+                    <button ng-click="performSearch()">Search</button>
+                    <button ng-click="clearMap()">Cancel</button>
+                </li>
+                <li>
+                    <div class="alert alert-warning" ng-if="invalidSearch">Wrong input data. Please try again!</div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!--map section-->
+        <div class="col-sm-9">
+            <div id="googleMap" style="height: 600px; width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+

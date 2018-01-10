@@ -2,12 +2,14 @@ package edu.utcluj.track;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import edu.utcluj.track.utils.LocalDateTimeConverter;
+import edu.utcluj.track.controller.PositionController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
-import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -21,12 +23,15 @@ import java.util.Properties;
 
 @SpringBootApplication
 @EnableSwagger2
+@ComponentScan("edu.utcluj.track")
 //@EnableTransactionManagement
 public class TrackApplication extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
         SpringApplication.run(TrackApplication.class, args);
     }
+
+    public static final Logger log = LoggerFactory.getLogger(PositionController.class);
 
     @Bean
     public DataSource dataSource() throws IOException {
@@ -36,10 +41,12 @@ public class TrackApplication extends WebMvcConfigurerAdapter {
         return new HikariDataSource(new HikariConfig(hikariProps));
     }
 
+/*
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new LocalDateTimeConverter("yyyy-MM-dd HH:mm:ss"));
     }
+*/
 
   /*  @Bean
     public PlatformTransactionManager transactionManager() throws IOException {

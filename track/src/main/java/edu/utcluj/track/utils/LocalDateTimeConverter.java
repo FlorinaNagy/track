@@ -2,8 +2,11 @@ package edu.utcluj.track.utils;
 
 import org.springframework.core.convert.converter.Converter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public final class LocalDateTimeConverter implements Converter<String, LocalDateTime> {
 

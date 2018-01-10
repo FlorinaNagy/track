@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Track App</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUXian9hbiU9UsNO1updyU4npyCUli3ZU"></script>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/map.css">
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="app.js"></script>
+    <script src="login/login-controller.js"></script>
+    <script src="map/map-controller.js"></script>
+    <script src="signUp/signup-controller.js"></script>
+
+</head>
+<body>
+<!--NAVIGATION-->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand">Track application</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="navbar-right" ng-show="isAuthenticated" ng-controller="loginController"><a ng-click="logout()">Logout</a> </li>
+    </ul>
+</nav>
+
+<!--MAIN CONTENT-->
+<div>
+    <ui-view></ui-view>
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT -->
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="container-fluid" ng-controller="signUpController">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Sign up to Track application</h1>
+            <div class="account-wall">
+                <form class="form-signin">
+                    <label></label>
+                    <input type="text" class="form-control" placeholder="Username" ng-model="newUser.username" required
+                           autofocus>
+                    <label></label>
+                    <input type="password" class="form-control" placeholder="Password" ng-model="newUser.password"
+                           required>
+                    <label></label>
+                    <input type="text" class="form-control" placeholder="First Name" ng-model="newUser.firstname" required
+                           autofocus>
+                    <label></label>
+                    <input type="text" class="form-control" placeholder="Last Name" ng-model="newUser.lastname" required
+                           autofocus>
+                    <label></label>
+                    <input type="text" class="form-control" placeholder="Email" ng-model="newUser.mail" required
+                           autofocus>
+                    <label></label>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="saveUser()">Save</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="cancelSaveUser()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
